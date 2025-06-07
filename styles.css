@@ -1,0 +1,305 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Container layout */
+.Container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  padding: 16px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.current-status {
+  position: relative;
+  background-color: #f8f9fa;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.sel-curr {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+.current-status h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.current-status p {
+  line-height: 1.5rem;
+  font-size: 16px;
+  color: #555;
+}
+
+.display {
+  padding-left: 1rem;
+  width: 100%;
+}
+
+.display-btn {
+  margin: 0.5rem;
+  background-color: #3498db; /* Blue background */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 10px 20px; /* Vertical and horizontal padding */
+  font-size: 16px; /* Font size */
+  font-weight: 700;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.display-btn:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+.table {
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #2980b9;
+  color: white;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+
+#expenseTable {
+  margin-block: 1rem;
+}
+
+/* Section layout */
+.income-section,
+.expense-form {
+  position: absolute;
+  display: none;
+  background-color: white;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 80%;
+  max-width: 600px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.show {
+  display: block;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #2980b9;
+}
+
+/* Currency and input */
+.currency-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.currency-symbol {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  width: 50px;
+}
+
+input[type="number"],
+input[type="date"],
+select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+select {
+  cursor: pointer;
+}
+
+/* Button styles */
+.btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  color: #ff4d4f;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.delete-btn:hover {
+  color: #d9363e;
+}
+
+.delete-btn:active {
+  transform: scale(0.98); /* Press down effect */
+}
+
+.error-msg {
+  color: red;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 2px;
+}
+
+/* Container for the button and dropdown */
+.sort_btn_container {
+  position: relative; /* Make sure the dropdown is positioned relative to this container */
+  display: inline-block;
+  margin: 20px; /* Add some space around the container */
+}
+
+/* Styling for the "Sort Expenses" button */
+.display-btn {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Change the button color on hover */
+.display-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Hide the dropdown initially */
+.sort-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position the dropdown directly below the button */
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  min-width: 180px; /* Width of the dropdown */
+  z-index: 1000; /* Ensure dropdown is above other content */
+}
+
+/* Style for the dropdown list */
+.sort-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for each item in the dropdown */
+.sort-menu ul li {
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Highlight the item on hover */
+.sort-menu ul li:hover {
+  background-color: #8f8f8f64;
+}
+
+/* Optional: Add a subtle transition effect */
+.sort-menu ul li {
+  transition: background-color 0.2s ease;
+}
+.sort-menu ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 600px) {
+  .Container {
+    padding: 0;
+  }
+
+  .current-status {
+    margin-inline: 0;
+  }
+
+  .currency-input {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .table {
+    padding: 1rem;
+  }
+
+  .currency-symbol {
+    margin-bottom: 0.5rem;
+  }
+}

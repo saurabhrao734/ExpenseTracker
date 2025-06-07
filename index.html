@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="Container">
+      <!-- title -->
+      <h1 class="title">Expense Tracker</h1>
+
+      <!-- current expenses -->
+      <div class="current-status">
+        <h2>Current Status</h2>
+        <p>
+          Income: <span class="currency">₹</span
+          ><span id="incomeAmount">0.00</span>
+        </p>
+        <p>
+          Expenses: <span class="currency">₹</span
+          ><span id="ExpenseAmount">0.00</span>
+        </p>
+        <p>
+          Savings: <span class="currency">₹</span
+          ><span id="savingsAmount">0.00</span>
+        </p>
+      </div>
+
+      <!-- update buttons -->
+      <div class="display">
+        <button class="display-btn" id="update-income">Update Income</button>
+        <button class="display-btn" id="update-expenses">Add expenses</button>
+
+        <div class="sort_btn_container">
+          <button class="display-btn" id="sort-expenses">Sort Expenses</button>
+
+          <!-- Dropdown menu -->
+          <div id="sort-menu" class="sort-menu">
+            <ul>
+              <li><a href="#" data-sort="category">Sort by Category</a></li>
+              <li><a href="#" data-sort="amount">Sort by Amount</a></li>
+              <li>
+                <a href="#" data-sort="amount-desc">Sort by Amount desc</a>
+              </li>
+              <li><a href="#" data-sort="date">Sort by Date</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="table">
+        <table id="expenseTable">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Date</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="expensesResult">
+            <!-- Expense rows will be dynamically inserted here -->
+          </tbody>
+          <tfoot>
+            <tr>
+              <td><strong>Total Expenses:</strong></td>
+              <td id="totalAmount" colspan="2">₹0.00</td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <form class="income-section">
+        <button type="button" class="close-button">×</button>
+        <h2>Enter your income</h2>
+
+        <label for="income-amount">Amount :₹</label>
+        <div class="currency-input">
+          <input
+            type="number"
+            name="income-amount"
+            id="income-amount"
+            placeholder="0.00"
+            min="0.00"
+            required
+          />
+          <span id="amount-error" class="error-msg"></span>
+        </div>
+        <button class="btn" id="newIncome">Update income</button>
+      </form>
+
+      <form class="expense-form">
+        <button type="button" class="close-button">×</button>
+        <h2>Add Expense</h2>
+
+        <label for="category">Category:</label>
+        <select name="category" id="category" required>
+          <option value="food & beverages" selected>Food & Beverages</option>
+          <option value="transport">Transport</option>
+          <option value="relaxing">Relaxing</option>
+          <option value="rent">Rent</option>
+          <option value="other">Other</option>
+        </select>
+        <span id="category-error" class="error-msg"></span>
+
+        <label for="expense-amount">Amount :₹</label>
+        <div class="currency-input">
+          <input
+            type="number"
+            name="amount"
+            id="expense-amount"
+            placeholder="0.00"
+            min="0.00"
+            required
+          />
+          <span id="amount-error" class="error-msg"></span>
+        </div>
+
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" required />
+        <span id="date-error" class="error-msg"></span>
+
+        <button class="btn" id="newExpense">Add Expense</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
