@@ -27,7 +27,7 @@ The app uses **local storage** to persist data across page reloads, ensuring tha
 
 ## Folder Structure
     ```bash
-    /expense-tracker
+    /ExpenseTracker
         /index.html
         /styles.css
         /script.js
@@ -62,10 +62,10 @@ This JavaScript file contains all the functionality of the app. It includes:
 
 1. Clone this repository to your local machine:
    ```bash
-   git clone https://github.com/Udit-kasana/Expense-Tracker.git
+   git clone https://github.com/mukeshkumarsoni4/ExpenseTracker.git
 2. Navigate to the project folder:
 
     ```bash
-    cd expense-tracker
+    cd ExpenseTracker
 
 3. Open `index.html` in your browser to start using the app.
