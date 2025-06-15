@@ -9,10 +9,6 @@ The **Expense Tracker** is a simple web application designed to help users manag
 - Sort expenses by category, amount, or date.
 - Keep track of the total expenses and savings.
 
-The app uses **local storage** to persist data across page reloads, ensuring that expenses are not lost even if the page is refreshed.
-
-[Expense Tracker Live Demo](https://udit-kasana.github.io/Expense-Tracker/)
-
 ---
 
 ## Features
@@ -62,7 +58,7 @@ This JavaScript file contains all the functionality of the app. It includes:
 
 1. Clone this repository to your local machine:
    ```bash
-   git clone https://github.com/mukeshkumarsoni4/ExpenseTracker.git
+   git clone https://github.com/saurabhrao734/ExpenseTracker.git
 2. Navigate to the project folder:
 
     ```bash
